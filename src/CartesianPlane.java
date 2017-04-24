@@ -239,7 +239,15 @@ public class CartesianPlane extends JPanel implements ActionListener{
 			g.setColor(Point.resultColor());
 			
 			Point temp = points.get(res);
-			g.drawString(temp.toString(), temp.getX(), temp.getY());
+			//g.drawString(temp.toString(), temp.getX(), temp.getY());
+			if (temp instanceof Infinity)
+			{
+				g.drawString(temp.toString(), temp.getX()-29, temp.getY()+20);
+			}
+			else
+			{
+				g.drawString(temp.toString(), temp.getX()+5, temp.getY()-2);
+			}
 		}
 	
 	}
