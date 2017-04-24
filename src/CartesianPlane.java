@@ -107,6 +107,7 @@ public class CartesianPlane extends JPanel implements ActionListener{
 	public void setCurve(EllipticCurve c)
 	{
 		c1 = c;
+		c1.findPoints();
 		points = new ArrayList<Point>();
 		
 		addInfinity();
@@ -115,6 +116,8 @@ public class CartesianPlane extends JPanel implements ActionListener{
 		{
 			addPoint(c1.points.get(i));
 		}
+		
+		repaint();
 	}
 	
 	public void zoomIn(int i)

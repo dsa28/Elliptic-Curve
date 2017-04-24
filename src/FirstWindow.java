@@ -1,4 +1,4 @@
-package views;
+
 
 import java.awt.EventQueue;
 
@@ -36,8 +36,7 @@ public class FirstWindow extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	//private static final Component JPanel = null;
-	//private CartesianPlane panel;
+	private CartesianPlane panel;
 
 	/**
 	 * Launch the application.
@@ -69,6 +68,7 @@ public class FirstWindow extends JFrame {
 		
 		initComponents();
 		CreateEvents();
+		panel = new CartesianPlane(this.getWidth(),this.getHeight());
 	}
 
 	///////////////////////////////////////////////////////////
@@ -159,8 +159,6 @@ public class FirstWindow extends JFrame {
 		JSpinner spinner_1 = new JSpinner();
 		
 		JSpinner spinner_2 = new JSpinner();
-		
-		JPanel panel = new JPanel();
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -169,12 +167,12 @@ public class FirstWindow extends JFrame {
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.RELATED, 1078, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 1081, Short.MAX_VALUE)
 							.addComponent(layeredPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED, 646, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED, 649, Short.MAX_VALUE)
 									.addComponent(lblCurve, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -194,9 +192,7 @@ public class FirstWindow extends JFrame {
 										.addGroup(gl_contentPane.createSequentialGroup()
 											.addGap(24)
 											.addComponent(lblOperations, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)))
-									.addGap(84)
-									.addComponent(panel, GroupLayout.PREFERRED_SIZE, 484, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED, 598, Short.MAX_VALUE)
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 										.addComponent(spinner, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 										.addComponent(button, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))))
@@ -219,13 +215,13 @@ public class FirstWindow extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(19)
 					.addComponent(lblNewLabel)
-					.addContainerGap(1056, Short.MAX_VALUE))
+					.addContainerGap(1039, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(29)
 					.addComponent(tglbtnAdd)
 					.addGap(152)
 					.addComponent(btnSelect)
-					.addContainerGap(795, Short.MAX_VALUE))
+					.addContainerGap(741, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -236,27 +232,22 @@ public class FirstWindow extends JFrame {
 							.addComponent(lblCurve, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
 							.addGap(29)
 							.addComponent(lblInputParameteres)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addPreferredGap(ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+									.addComponent(lblNewLabel)
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-											.addComponent(lblNewLabel)
-											.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_contentPane.createSequentialGroup()
-													.addGap(4)
-													.addComponent(button, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_contentPane.createSequentialGroup()
-													.addGap(7)
-													.addComponent(lblSpecifyB))))
-										.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-											.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(spinner_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-											.addGap(5))))
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(4)
+											.addComponent(button, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(7)
+											.addComponent(lblSpecifyB))))
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(78)
-									.addComponent(panel, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(spinner_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(spinner_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addGap(5))))
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 							.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 							.addComponent(button_3, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
@@ -274,7 +265,7 @@ public class FirstWindow extends JFrame {
 							.addComponent(layeredPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addComponent(button_5, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 						.addComponent(button_4, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(18, Short.MAX_VALUE))
+					.addContainerGap(13, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(189)
 					.addComponent(lblSpecifyP)
@@ -282,7 +273,7 @@ public class FirstWindow extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(189)
 					.addComponent(spinner_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
 					.addComponent(btnSelect)
 					.addGap(32))
 		);
