@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -55,6 +56,8 @@ public class TestWindow {
 		p.setPreferredSize(new Dimension(150,450));
 	
 		p.setVisible(true);
+		
+		p.setBackground(Color.WHITE);
 		
 		//this.getContentPane().add(buttonPane,BorderLayout.SOUTH);
 		frame.getContentPane().add(p,BorderLayout.WEST); //Set content pannel
