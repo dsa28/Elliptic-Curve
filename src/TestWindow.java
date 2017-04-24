@@ -24,16 +24,15 @@ public class TestWindow {
 	private JFrame frame;
 	private CartesianPlane plane;
 	private EllipticCurve c1;
+	
 	private LeftPanel left;
+	private RightPanel right;
+	private UpperPanel upper;
+	private LowerPanel lower;
 	
-	
-	private JPanel right_panel;
-	private JPanel upper_panel;
-	private JPanel lower_panel;
 	private JMenuBar menuBar;
 	private JMenu Menu;
-	private JLayeredPane layeredPane;
-	private JLabel Operations;
+
 
 	/**
 	 * Launch the application.
@@ -75,12 +74,16 @@ public class TestWindow {
 		
 		plane.setCurve(c1);
 		
+		right = new RightPanel();
 		left = new LeftPanel();
-		
-
+		upper = new UpperPanel();
+		lower = new LowerPanel();
 		
 		//this.getContentPane().add(buttonPane,BorderLayout.SOUTH);
-		frame.getContentPane().add(left,BorderLayout.WEST); //Set content pannel
+		frame.getContentPane().add(left,BorderLayout.WEST); //Set content panel
+		frame.getContentPane().add(right,BorderLayout.EAST);
+		frame.getContentPane().add(upper,BorderLayout.NORTH);
+		frame.getContentPane().add(lower,BorderLayout.SOUTH);
 		frame.getContentPane().add(plane, BorderLayout.CENTER);
 		
 

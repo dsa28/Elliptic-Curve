@@ -14,12 +14,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SpringLayout;
 
-public class LeftPanel extends JPanel {
+public class RightPanel extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public LeftPanel() {
+	public RightPanel() {
 		SpringLayout springLayout = new SpringLayout();
 		setLayout(springLayout);
 

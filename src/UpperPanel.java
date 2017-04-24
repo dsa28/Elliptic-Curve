@@ -14,17 +14,17 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SpringLayout;
 
-public class LeftPanel extends JPanel {
+public class UpperPanel extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public LeftPanel() {
+	public UpperPanel() {
 		SpringLayout springLayout = new SpringLayout();
 		setLayout(springLayout);
 
 		
-		setPreferredSize(new Dimension(200,306));
+		setPreferredSize(new Dimension(185,60));
 		setVisible(true);
 
 		setBackground(SystemColor.window);
