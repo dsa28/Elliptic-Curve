@@ -77,23 +77,22 @@ public class FirstWindow extends JFrame {
 	private void initComponents() {
 		// TODO Auto-generated method stub
 
-		javax.swing.JPanel contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		((Component) JPanel).setPreferredSize(new Dimension(500,500));
-	    getContentPane().add((Component) JPanel);
+	
 	    pack();
 	    
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FirstWindow.class.getResource("/resources/zoom-in copy.png")));
 		setTitle("My Awesome GUI");
 		setBackground(Color.WHITE);
 		
-		JFrame frame = new JFrame("Content Pane Size Example");
-		frame.getContentPane().setPreferredSize(new Dimension(400, 300));
-		frame.pack();
-		frame.setVisible(true);
+		//JFrame frame = new JFrame("Content Pane Size Example");
+		//frame.getContentPane().setPreferredSize(new Dimension(400, 300));
+		//frame.pack();
+		//frame.setVisible(true);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -119,7 +118,7 @@ public class FirstWindow extends JFrame {
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		
-		JButton button = new JButton("‚Üê");
+		JButton button = new JButton("‚Ü");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
