@@ -25,6 +25,7 @@ public class RightPanel extends JPanel {
 	public JButton btnLeft;
 	public JButton btnUp;
 	public JButton btnDown;
+	public JButton btnMiddle;
 	
 	/**
 	 * Create the panel.
@@ -94,7 +95,7 @@ public class RightPanel extends JPanel {
 		btnLeft.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/arrow_left.png")));
 		add(btnLeft);
 		
-		JButton btnMiddle = new JButton("");
+		 btnMiddle = new JButton("");
 		springLayout.putConstraint(SpringLayout.NORTH, btnMiddle, 43, SpringLayout.NORTH, btnUp);
 		springLayout.putConstraint(SpringLayout.WEST, btnMiddle, 0, SpringLayout.WEST, btnUp);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnMiddle, -6, SpringLayout.NORTH, btnDown);

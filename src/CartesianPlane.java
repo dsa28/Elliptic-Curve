@@ -65,6 +65,14 @@ public class CartesianPlane extends JPanel implements ActionListener{
 	
 	private int scalar;
 	
+	public void start()
+	{
+		x0 = getWidth()/4;
+		y0 = 3*getHeight()/4;
+		scale = 10;
+		
+		repaint();
+	}
 	public void setAddition()
 	{
 		opMax = 2;
