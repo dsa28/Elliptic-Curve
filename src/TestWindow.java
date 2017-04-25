@@ -29,9 +29,8 @@ public class TestWindow {
 	
 	private JFrame frame;
 	
-	private JPanel cards;
 	private JPanel ecc;
-	private JPanel suprise;
+	private  PolynomialArithmetic magic;
 	
 	private CartesianPlane plane;
 	private EllipticCurve c1;
@@ -215,7 +214,7 @@ public class TestWindow {
 		frame.setJMenuBar(menuBar);
 		menuBar.setVisible(true);
 		
-		Menu = new JMenu("New menu");
+		Menu = new JMenu("Menu");
 		menuBar.add(Menu);
 		
 		JMenuItem mntmEllipticCurve = new JMenuItem("Elliptic Curve");
@@ -229,13 +228,13 @@ public class TestWindow {
 	
 		
 		c.addLayoutComponent(ecc, "curve");
-		JPanel f2 = new JPanel();
-		c.addLayoutComponent(f2,"poly");
+		magic = new PolynomialArithmetic();
+		c.addLayoutComponent(magic,"poly");
 		
 		
 		frame.getContentPane().setLayout(c);
 		frame.getContentPane().add(ecc,BorderLayout.CENTER);
-		frame.getContentPane().add(f2);
+		frame.getContentPane().add(magic);
 		
 		
 		mntmEllipticCurve.addActionListener(new ActionListener(){
