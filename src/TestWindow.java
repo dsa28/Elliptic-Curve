@@ -1,8 +1,10 @@
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.LayoutManager2;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -23,7 +25,14 @@ import javax.swing.JToggleButton;
 
 public class TestWindow {
 
+
+	
 	private JFrame frame;
+	
+	private JPanel cards;
+	private JPanel ecc;
+	private JPanel suprise;
+	
 	private CartesianPlane plane;
 	private EllipticCurve c1;
 	
@@ -34,6 +43,8 @@ public class TestWindow {
 	
 	private JMenuBar menuBar;
 	private JMenu Menu;
+	
+	CardLayout c = new CardLayout();
 
 
 	/**
@@ -63,15 +74,22 @@ public class TestWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+		
 		frame = new JFrame();
 		frame.setBounds(0, 0, 1950, 1273);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		
 		plane = new CartesianPlane(500, 500);
 		
 		c1 = new EllipticCurve(1);
 		c1.setA(0);
 		c1.setB(0);
+		
+		ecc = new JPanel();
+		ecc.setBounds(0, 0, 1950, 1273);
 		
 		
 		plane.setCurve(c1);
@@ -100,15 +118,7 @@ public class TestWindow {
 			}
 		});
 		
-		/*left.spinner.addChangeListener(new ChangeListener()
-		{@Override
-			public void stateChanged(ChangeEvent arg0) {
-				// TODO Auto-generated method stub
-			
-			c1.setA(Integer.parseInt(left.spinner_1.getValue().toString()));
-			plane.setCurve(c1);
-				
-			}});*/
+	
 		
 		left.tglbtnSelect.addActionListener(new ActionListener(){
 
@@ -159,6 +169,9 @@ public class TestWindow {
 		right.btnMiddle.addActionListener(new ActionListener()
 		{public void actionPerformed(ActionEvent arg0){plane.start();};});
 		
+		
+		ecc.setLayout(new BorderLayout(0, 0));
+		
 		left.spinner.addChangeListener(new ChangeListener()
 		{@Override
 			public void stateChanged(ChangeEvent arg0) {
@@ -188,22 +201,13 @@ public class TestWindow {
 				
 			}});
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	
-		frame.getContentPane().add(left,BorderLayout.WEST); //Set content panel
-		frame.getContentPane().add(right,BorderLayout.EAST);
-		frame.getContentPane().add(upper,BorderLayout.NORTH);
-		frame.getContentPane().add(lower,BorderLayout.SOUTH);
-		frame.getContentPane().add(plane, BorderLayout.CENTER);
-		
+	
+		ecc.add(left,BorderLayout.WEST);
+		ecc.add(right,BorderLayout.EAST);
+        ecc.add(upper,BorderLayout.NORTH);
+		ecc.add(lower,BorderLayout.SOUTH);
+		ecc.add(plane,BorderLayout.CENTER);
 
 		
 		menuBar = new JMenuBar();
@@ -219,9 +223,37 @@ public class TestWindow {
 		
 		JMenuItem mntmSurprise = new JMenuItem("Surprise!");
 		Menu.add(mntmSurprise);
+		
 		plane.setVisible(true);
 
-		frame.getContentPane().setVisible(true);
 	
+		
+		c.addLayoutComponent(ecc, "curve");
+		JPanel f2 = new JPanel();
+		c.addLayoutComponent(f2,"poly");
+		
+		
+		frame.getContentPane().setLayout(c);
+		frame.getContentPane().add(ecc,BorderLayout.CENTER);
+		frame.getContentPane().add(f2);
+		
+		
+		mntmEllipticCurve.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				c.show(frame.getContentPane(), "curve");
+			}	
+		});
+		
+		mntmSurprise.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				c.show(frame.getContentPane(), "poly");
+			}	
+		});
+		
+		frame.getContentPane().setVisible(true);
 	}
+	
+	
 }
