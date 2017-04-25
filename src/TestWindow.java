@@ -69,9 +69,9 @@ public class TestWindow {
 		
 		plane = new CartesianPlane(500, 500);
 		
-		c1 = new EllipticCurve(5);
-		c1.setA(4);
-		c1.setB(4);
+		c1 = new EllipticCurve(1);
+		c1.setA(0);
+		c1.setB(0);
 		
 		
 		plane.setCurve(c1);

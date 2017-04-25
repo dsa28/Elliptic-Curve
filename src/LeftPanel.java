@@ -3,6 +3,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JToggleButton;
+import javax.swing.SpinnerListModel;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,6 +14,7 @@ import java.awt.FlowLayout;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.SpringLayout;
 import javax.swing.ImageIcon;
@@ -30,6 +34,34 @@ public class LeftPanel extends JPanel {
 	public JButton btnMultiplyBy;
 	public JToggleButton tglbtnSelect;
 	
+	public ArrayList<String> p = new ArrayList<String>();
+	
+	private void findPrimes(int n)
+	{
+		boolean[] nums = new boolean[n];
+		for (int i=0;i<n;i++)
+		{
+			nums[i] = true;
+		}
+		
+		p.add("1");
+		
+		for (int i=2; i<n; i++)
+		{
+		
+		if (nums[i])
+		{
+			p.add(i + "");
+			
+			for (int j=0; j*i<n; j++)
+			{
+				nums[j*i] = false; //not prime
+			}
+		}
+			
+		}
+	}
+
 	/**
 	 * Create the panel.
 	 */
@@ -87,6 +119,8 @@ public class LeftPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.EAST, spinner, -163, SpringLayout.EAST, this);
 		add(spinner);
 		
+		
+		
 		spinner_1 = new JSpinner();
 		springLayout.putConstraint(SpringLayout.WEST, spinner_1, 71, SpringLayout.EAST, lblSpecifyB);
 		springLayout.putConstraint(SpringLayout.EAST, spinner_1, -163, SpringLayout.EAST, this);
@@ -94,7 +128,12 @@ public class LeftPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.NORTH, spinner_1, 104, SpringLayout.NORTH, this);
 		add(spinner_1);
 		
-		spinner_2 = new JSpinner();
+		
+		 p = new ArrayList<String>();
+		findPrimes(600);
+		
+		SpinnerModel primes = new SpinnerListModel(p);
+		spinner_2 = new JSpinner(primes);
 		springLayout.putConstraint(SpringLayout.WEST, spinner_2, 71, SpringLayout.EAST, lblSpecifyP);
 		springLayout.putConstraint(SpringLayout.EAST, spinner_2, -163, SpringLayout.EAST, this);
 		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel_1, 32, SpringLayout.SOUTH, spinner_2);
@@ -128,7 +167,9 @@ public class LeftPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, 0, SpringLayout.EAST, lblOperations);
 		add(tglbtnSelect);
 		
-		 spinner_3 = new JSpinner();
+		
+		SpinnerModel nums = new SpinnerNumberModel(1,1,1000,1);
+		 spinner_3 = new JSpinner(nums);
 		springLayout.putConstraint(SpringLayout.EAST, btnMultiplyBy, -13, SpringLayout.WEST, spinner_3);
 		springLayout.putConstraint(SpringLayout.NORTH, spinner_3, 100, SpringLayout.SOUTH, lblSelectAPoints);
 		springLayout.putConstraint(SpringLayout.WEST, spinner_3, 157, SpringLayout.WEST, this);
