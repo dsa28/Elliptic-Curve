@@ -64,7 +64,7 @@ public class TestWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1950, 1273);
+		frame.setBounds(0, 0, 1950, 1273);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		plane = new CartesianPlane(500, 500);
