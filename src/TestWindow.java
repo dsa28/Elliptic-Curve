@@ -10,6 +10,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.SpringLayout;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import java.awt.SystemColor;
@@ -79,7 +81,73 @@ public class TestWindow {
 		upper = new UpperPanel();
 		lower = new LowerPanel();
 		
+		//setting the buttons
+		left.btnAdd.addActionListener(new ActionListener(){
 
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			plane.setAddition();
+			}
+			
+		});
+		
+		left.btnMultiplyBy.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				plane.setMultiplication();
+			}
+		});
+		
+		/*left.spinner.addChangeListener(new ChangeListener()
+		{@Override
+			public void stateChanged(ChangeEvent arg0) {
+				// TODO Auto-generated method stub
+			
+			c1.setA(Integer.parseInt(left.spinner_1.getValue().toString()));
+			plane.setCurve(c1);
+				
+			}});*/
+		
+		left.tglbtnSelect.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				plane.setSelect();
+			}
+			
+		});
+		
+		right.btnZoomIn.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				plane.zoomIn(2);
+			}
+			
+		});
+		
+		right.btnZoomOut.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				plane.zoomOut(2);
+			}
+			
+		});
+		
+		left.spinner_3.addChangeListener(new ChangeListener()
+		{@Override
+			public void stateChanged(ChangeEvent arg0) {
+				// TODO Auto-generated method stub
+			plane.setScalar(left.spinner_3.getValue().toString());
+				
+			}});
+		
 		//this.getContentPane().add(buttonPane,BorderLayout.SOUTH);
 		frame.getContentPane().add(left,BorderLayout.WEST); //Set content panel
 		frame.getContentPane().add(right,BorderLayout.EAST);

@@ -18,6 +18,9 @@ import javax.swing.ImageIcon;
 
 public class RightPanel extends JPanel {
 
+	public JButton btnZoomIn;
+	public JButton btnZoomOut;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -39,11 +42,11 @@ public class RightPanel extends JPanel {
 		lblControls.setFont(new Font("Lucida Grande", Font.BOLD, 17));
 		add(lblControls);
 		
-		JButton btnZoomIn = new JButton("");
+		 btnZoomIn = new JButton("");
 		btnZoomIn.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/zoom_in.png")));
 		add(btnZoomIn);
 		
-		JButton btnZoomOut = new JButton("");
+		 btnZoomOut = new JButton("");
 		springLayout.putConstraint(SpringLayout.WEST, btnZoomOut, 184, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.EAST, btnZoomIn, -56, SpringLayout.WEST, btnZoomOut);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnZoomIn, 0, SpringLayout.SOUTH, btnZoomOut);

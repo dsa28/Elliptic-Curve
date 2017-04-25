@@ -21,6 +21,15 @@ import javax.swing.JTable;
 
 public class LeftPanel extends JPanel {
 
+	public JSpinner spinner;
+	public JSpinner spinner_1;
+	public JSpinner spinner_2;
+	public JSpinner spinner_3;
+	
+	public JButton btnAdd;
+	public JButton btnMultiplyBy;
+	public JToggleButton tglbtnSelect;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -73,26 +82,26 @@ public class LeftPanel extends JPanel {
 		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblNewLabel_1);
 		
-		JSpinner spinner = new JSpinner();
+		spinner = new JSpinner();
 		springLayout.putConstraint(SpringLayout.WEST, spinner, 69, SpringLayout.EAST, lblNewLabel);
 		springLayout.putConstraint(SpringLayout.EAST, spinner, -163, SpringLayout.EAST, this);
 		add(spinner);
 		
-		JSpinner spinner_1 = new JSpinner();
+		spinner_1 = new JSpinner();
 		springLayout.putConstraint(SpringLayout.WEST, spinner_1, 71, SpringLayout.EAST, lblSpecifyB);
 		springLayout.putConstraint(SpringLayout.EAST, spinner_1, -163, SpringLayout.EAST, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, spinner, -10, SpringLayout.NORTH, spinner_1);
 		springLayout.putConstraint(SpringLayout.NORTH, spinner_1, 104, SpringLayout.NORTH, this);
 		add(spinner_1);
 		
-		JSpinner spinner_2 = new JSpinner();
+		spinner_2 = new JSpinner();
 		springLayout.putConstraint(SpringLayout.WEST, spinner_2, 71, SpringLayout.EAST, lblSpecifyP);
 		springLayout.putConstraint(SpringLayout.EAST, spinner_2, -163, SpringLayout.EAST, this);
 		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel_1, 32, SpringLayout.SOUTH, spinner_2);
 		springLayout.putConstraint(SpringLayout.NORTH, spinner_2, 13, SpringLayout.SOUTH, spinner_1);
 		add(spinner_2);
 		
-		JButton btnAdd = new JButton("Add");
+		btnAdd = new JButton("Add");
 		springLayout.putConstraint(SpringLayout.EAST, lblOperations, 0, SpringLayout.EAST, btnAdd);
 		springLayout.putConstraint(SpringLayout.WEST, btnAdd, 0, SpringLayout.WEST, lblNewLabel);
 		springLayout.putConstraint(SpringLayout.EAST, btnAdd, -256, SpringLayout.EAST, this);
@@ -105,13 +114,13 @@ public class LeftPanel extends JPanel {
 		lblSelectAPoints.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblSelectAPoints);
 		
-		JButton btnMultiplyBy = new JButton("Multiply by");
+		btnMultiplyBy = new JButton("Multiply by");
 		springLayout.putConstraint(SpringLayout.WEST, btnMultiplyBy, 30, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnAdd, -6, SpringLayout.NORTH, btnMultiplyBy);
 		springLayout.putConstraint(SpringLayout.NORTH, btnMultiplyBy, 452, SpringLayout.NORTH, this);
 		add(btnMultiplyBy);
 		
-		JToggleButton tglbtnSelect = new JToggleButton("Select");
+		 tglbtnSelect = new JToggleButton("Select");
 		tglbtnSelect.setSelected(true);
 		springLayout.putConstraint(SpringLayout.NORTH, tglbtnSelect, 358, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, lblSelectAPoints, -6, SpringLayout.NORTH, tglbtnSelect);
@@ -119,7 +128,7 @@ public class LeftPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, 0, SpringLayout.EAST, lblOperations);
 		add(tglbtnSelect);
 		
-		JSpinner spinner_3 = new JSpinner();
+		 spinner_3 = new JSpinner();
 		springLayout.putConstraint(SpringLayout.EAST, btnMultiplyBy, -13, SpringLayout.WEST, spinner_3);
 		springLayout.putConstraint(SpringLayout.NORTH, spinner_3, 100, SpringLayout.SOUTH, lblSelectAPoints);
 		springLayout.putConstraint(SpringLayout.WEST, spinner_3, 157, SpringLayout.WEST, this);
