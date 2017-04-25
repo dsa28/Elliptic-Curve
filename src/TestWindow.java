@@ -65,7 +65,7 @@ public class TestWindow {
 		frame.setBounds(100, 100, 1000, 612);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		plane = new CartesianPlane(frame.getWidth(), frame.getHeight());
+		plane = new CartesianPlane(500, 500);
 		
 		c1 = new EllipticCurve(5);
 		c1.setA(4);
@@ -79,10 +79,11 @@ public class TestWindow {
 		upper = new UpperPanel();
 		lower = new LowerPanel();
 		
+
 		//this.getContentPane().add(buttonPane,BorderLayout.SOUTH);
 		frame.getContentPane().add(left,BorderLayout.WEST); //Set content panel
 		frame.getContentPane().add(right,BorderLayout.EAST);
-		frame.getContentPane().add(upper,BorderLayout.NORTH);
+		//frame.getContentPane().add(upper,BorderLayout.NORTH);
 		frame.getContentPane().add(lower,BorderLayout.SOUTH);
 		frame.getContentPane().add(plane, BorderLayout.CENTER);
 		
