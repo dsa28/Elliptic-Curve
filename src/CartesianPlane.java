@@ -116,6 +116,8 @@ public class CartesianPlane extends JPanel implements ActionListener{
 	
 	public void setCurve(EllipticCurve c)
 	{
+		deselect();
+		
 		c1 = c;
 		c1.findPoints();
 		
