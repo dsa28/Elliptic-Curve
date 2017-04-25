@@ -24,7 +24,7 @@ public class LowerPanel extends JPanel {
 		setLayout(springLayout);
 
 		
-		setPreferredSize(new Dimension(185,60));
+		setPreferredSize(new Dimension(185,100));
 		setVisible(true);
 
 		setBackground(SystemColor.window);
