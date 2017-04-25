@@ -90,7 +90,7 @@ public class TestWindow {
 
 		
 		menuBar = new JMenuBar();
-		menuBar.setBackground(new Color(204, 0, 255));
+		//menuBar.setBackground(new Color(204, 0, 255));
 		frame.setJMenuBar(menuBar);
 		menuBar.setVisible(true);
 		
