@@ -44,9 +44,9 @@ public PolynomialWelcome() {
 		add(label);
 		
 		JButton btnStartPoly = new JButton("Start");
-		springLayout.putConstraint(SpringLayout.NORTH, label, 0, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.WEST, label, 184, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.EAST, label, -56, SpringLayout.EAST, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, label, 0, SpringLayout.SOUTH, this);
+		springLayout.putConstraint(SpringLayout.NORTH, btnStartPoly, 1104, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, btnStartPoly, 184, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnStartPoly, -56, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnStartPoly, 97, SpringLayout.SOUTH, this);
 		add(btnStartPoly);}
 }
