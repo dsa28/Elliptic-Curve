@@ -148,10 +148,49 @@ public class TestWindow {
 				
 			}});
 		
-		//this.getContentPane().add(buttonPane,BorderLayout.SOUTH);
+		
+		left.spinner.addChangeListener(new ChangeListener()
+		{@Override
+			public void stateChanged(ChangeEvent arg0) {
+				// TODO Auto-generated method stub
+			c1.setA(Integer.parseInt(left.spinner.getValue().toString()));
+			plane.setCurve(c1);
+				
+			}});
+		
+
+		left.spinner_1.addChangeListener(new ChangeListener()
+		{@Override
+			public void stateChanged(ChangeEvent arg0) {
+				// TODO Auto-generated method stub
+			c1.setB(Integer.parseInt(left.spinner_1.getValue().toString()));
+			plane.setCurve(c1);
+				
+			}});
+		
+		
+		left.spinner_2.addChangeListener(new ChangeListener()
+		{@Override
+			public void stateChanged(ChangeEvent arg0) {
+				// TODO Auto-generated method stub
+			c1.setP(Integer.parseInt(left.spinner_2.getValue().toString()));
+			plane.setCurve(c1);
+				
+			}});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 		frame.getContentPane().add(left,BorderLayout.WEST); //Set content panel
 		frame.getContentPane().add(right,BorderLayout.EAST);
-		//frame.getContentPane().add(upper,BorderLayout.NORTH);
+		frame.getContentPane().add(upper,BorderLayout.NORTH);
 		frame.getContentPane().add(lower,BorderLayout.SOUTH);
 		frame.getContentPane().add(plane, BorderLayout.CENTER);
 		

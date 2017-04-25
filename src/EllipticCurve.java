@@ -112,6 +112,8 @@ public class EllipticCurve {
 	public void setA(int a)
 	{
 			this.a = a;
+			points = new ArrayList<Point>();
+			findPoints();
 		
 	}
 	
@@ -119,7 +121,15 @@ public class EllipticCurve {
 	public void setB(int b)
 	{
 			this.b = b;
-			
+			points = new ArrayList<Point>();
+			findPoints();
+	}
+	
+	public void setP(int p)
+	{
+		this.p = p;
+		points = new ArrayList<Point>();
+		findPoints();
 	}
 	
 	public Point add(Point p1, Point p2)

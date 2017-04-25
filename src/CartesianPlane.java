@@ -108,6 +108,8 @@ public class CartesianPlane extends JPanel implements ActionListener{
 	{
 		c1 = c;
 		c1.findPoints();
+		
+		this.removeAll();
 		points = new ArrayList<Point>();
 		
 		addInfinity();
