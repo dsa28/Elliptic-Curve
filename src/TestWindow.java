@@ -148,6 +148,14 @@ public class TestWindow {
 				
 			}});
 		
+		right.btnRight.addActionListener(new ActionListener()
+		{public void actionPerformed(ActionEvent arg0){plane.moveRight(50);};});
+		right.btnLeft.addActionListener(new ActionListener()
+		{public void actionPerformed(ActionEvent arg0){plane.moveLeft(50);};});
+		right.btnUp.addActionListener(new ActionListener()
+		{public void actionPerformed(ActionEvent arg0){plane.moveUp(50);};});
+		right.btnDown.addActionListener(new ActionListener()
+		{public void actionPerformed(ActionEvent arg0){plane.moveDown(50);};});
 		
 		left.spinner.addChangeListener(new ChangeListener()
 		{@Override

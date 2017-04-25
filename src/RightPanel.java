@@ -21,6 +21,11 @@ public class RightPanel extends JPanel {
 	public JButton btnZoomIn;
 	public JButton btnZoomOut;
 	
+	public JButton btnRight;
+	public JButton btnLeft;
+	public JButton btnUp;
+	public JButton btnDown;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -53,7 +58,7 @@ public class RightPanel extends JPanel {
 		btnZoomOut.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/zoom_out.png")));
 		add(btnZoomOut);
 		
-		JButton btnUp = new JButton("");
+		btnUp = new JButton("");
 		springLayout.putConstraint(SpringLayout.NORTH, btnUp, 55, SpringLayout.SOUTH, lblControls);
 		springLayout.putConstraint(SpringLayout.WEST, btnUp, 30, SpringLayout.WEST, lblControls);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnUp, 92, SpringLayout.SOUTH, lblControls);
@@ -61,7 +66,7 @@ public class RightPanel extends JPanel {
 		btnUp.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/arrow_up.png")));
 		add(btnUp);
 		
-		JButton btnDown = new JButton("");
+		btnDown = new JButton("");
 		springLayout.putConstraint(SpringLayout.NORTH, btnDown, 49, SpringLayout.SOUTH, btnUp);
 		springLayout.putConstraint(SpringLayout.WEST, btnDown, 132, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnDown, -229, SpringLayout.SOUTH, this);
@@ -69,7 +74,7 @@ public class RightPanel extends JPanel {
 		btnDown.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/arrow_down.png")));
 		add(btnDown);
 		
-		JButton btnRight = new JButton("");
+		btnRight = new JButton("");
 		springLayout.putConstraint(SpringLayout.NORTH, btnRight, 98, SpringLayout.SOUTH, lblControls);
 		springLayout.putConstraint(SpringLayout.EAST, btnRight, -80, SpringLayout.EAST, this);
 		springLayout.putConstraint(SpringLayout.NORTH, btnZoomOut, 102, SpringLayout.SOUTH, btnRight);
@@ -80,7 +85,7 @@ public class RightPanel extends JPanel {
 		btnRight.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/arrow_right.png")));
 		add(btnRight);
 		
-		JButton btnLeft = new JButton("");
+		 btnLeft = new JButton("");
 		springLayout.putConstraint(SpringLayout.WEST, btnRight, 51, SpringLayout.EAST, btnLeft);
 		springLayout.putConstraint(SpringLayout.NORTH, btnLeft, 0, SpringLayout.NORTH, btnRight);
 		springLayout.putConstraint(SpringLayout.WEST, btnLeft, 87, SpringLayout.WEST, this);
