@@ -23,9 +23,9 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTable;
 
-public class EllipticWelcome extends JPanel {
+public class LearnMore extends JPanel {
 
-public EllipticWelcome() {
+public LearnMore() {
 		SpringLayout springLayout = new SpringLayout();
 		setLayout(springLayout);
 

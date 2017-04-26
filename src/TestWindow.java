@@ -223,19 +223,24 @@ public class TestWindow {
 		JMenuItem mntmSurprise = new JMenuItem("Surprise!");
 		Menu.add(mntmSurprise);
 		
+		JMenuItem mntmLearnMore = new JMenuItem("Learn more");
+		Menu.add(mntmLearnMore);
+		
 		plane.setVisible(true);
 
-	
+		magic = new PolynomialArithmetic();
+		
+		LearnMore learn = new LearnMore();
 		
 		c.addLayoutComponent(ecc, "curve");
-		magic = new PolynomialArithmetic();
 		c.addLayoutComponent(magic,"poly");
+		c.addLayoutComponent(learn, "learn");
 		
 		
 		frame.getContentPane().setLayout(c);
-		frame.getContentPane().add(ecc,BorderLayout.CENTER);
+		frame.getContentPane().add(ecc);
 		frame.getContentPane().add(magic);
-		
+		frame.getContentPane().add(learn);
 		
 		mntmEllipticCurve.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
@@ -248,6 +253,13 @@ public class TestWindow {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				c.show(frame.getContentPane(), "poly");
+			}	
+		});
+		
+		mntmLearnMore.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				c.show(frame.getContentPane(), "learn");
 			}	
 		});
 		
