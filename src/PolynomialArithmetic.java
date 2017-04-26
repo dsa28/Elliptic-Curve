@@ -33,15 +33,18 @@ public class PolynomialArithmetic extends JPanel {
 		CenterPanel2 center = new CenterPanel2();
 		LeftPanel2 left = new LeftPanel2();
 		RightPanel2 right = new RightPanel2();
+		LowerPanel2 lower = new LowerPanel2();
+		UpperPanel2 upper = new UpperPanel2();
 		
-	
 		this.setBounds(0, 0, 1950, 1273);
 		this.setLayout(new BorderLayout(0, 0));
 	
+		
+		this.add(upper,BorderLayout.NORTH);
 		this.add(left, BorderLayout.WEST);
 		this.add(right, BorderLayout.EAST);
+		this.add(lower,BorderLayout.SOUTH);
 		this.add(center,BorderLayout.CENTER);
-		
 
 		
 	}
