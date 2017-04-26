@@ -32,7 +32,7 @@ public class LeftPanel extends JPanel {
 	
 	public JButton btnAdd;
 	public JButton btnMultiplyBy;
-	public JToggleButton tglbtnSelect;
+	public JButton tglbtnSelect;
 	
 	public ArrayList<String> p = new ArrayList<String>();
 	
@@ -159,8 +159,8 @@ public class LeftPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.NORTH, btnMultiplyBy, 452, SpringLayout.NORTH, this);
 		add(btnMultiplyBy);
 		
-		 tglbtnSelect = new JToggleButton("Select");
-		tglbtnSelect.setSelected(true);
+		 tglbtnSelect = new JButton("Select");
+		
 		springLayout.putConstraint(SpringLayout.NORTH, tglbtnSelect, 358, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, lblSelectAPoints, -6, SpringLayout.NORTH, tglbtnSelect);
 		springLayout.putConstraint(SpringLayout.WEST, tglbtnSelect, 0, SpringLayout.WEST, lblNewLabel);
