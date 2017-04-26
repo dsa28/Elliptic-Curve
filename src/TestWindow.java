@@ -220,11 +220,18 @@ public class TestWindow {
 		JMenuItem mntmEllipticCurve = new JMenuItem("Elliptic Curve");
 		Menu.add(mntmEllipticCurve);
 		
-		JMenuItem mntmSurprise = new JMenuItem("Surprise!");
-		Menu.add(mntmSurprise);
-		
 		JMenuItem mntmLearnMore = new JMenuItem("Learn more");
 		Menu.add(mntmLearnMore);
+		
+		mntmLearnMore.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				c.show(frame.getContentPane(), "learn");
+			}	
+		});
+		
+		JMenuItem mntmSurprise = new JMenuItem("Surprise!");
+		Menu.add(mntmSurprise);
 		
 		plane.setVisible(true);
 
@@ -253,13 +260,6 @@ public class TestWindow {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				c.show(frame.getContentPane(), "poly");
-			}	
-		});
-		
-		mntmLearnMore.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				c.show(frame.getContentPane(), "learn");
 			}	
 		});
 		

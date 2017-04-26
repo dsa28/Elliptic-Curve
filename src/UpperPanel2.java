@@ -9,6 +9,7 @@ import javax.swing.SpringLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JToggleButton;
+import java.awt.Font;
 
 public class UpperPanel2 extends JPanel{
 	
@@ -16,33 +17,39 @@ public class UpperPanel2 extends JPanel{
 	SpringLayout springLayout = new SpringLayout();
 	setLayout(springLayout);
 	
-	setPreferredSize(new Dimension(700, 286));
+	setPreferredSize(new Dimension(1435, 283));
 	setVisible(true);	
 	
 	setBackground(SystemColor.window);
 	
-	JEditorPane editorPaneP1 = new JEditorPane();
-	springLayout.putConstraint(SpringLayout.NORTH, editorPaneP1, 27, SpringLayout.NORTH, this);
-	springLayout.putConstraint(SpringLayout.WEST, editorPaneP1, 75, SpringLayout.WEST, this);
-	springLayout.putConstraint(SpringLayout.SOUTH, editorPaneP1, 68, SpringLayout.NORTH, this);
-	springLayout.putConstraint(SpringLayout.EAST, editorPaneP1, 429, SpringLayout.WEST, this);
-	add(editorPaneP1);
+	JEditorPane editorPane = new JEditorPane();
+	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 101, SpringLayout.NORTH, this);
+	springLayout.putConstraint(SpringLayout.WEST, editorPane, 569, SpringLayout.WEST, this);
+	add(editorPane);
 	
-	JEditorPane editorPaneP2 = new JEditorPane();
-	springLayout.putConstraint(SpringLayout.NORTH, editorPaneP2, 24, SpringLayout.SOUTH, editorPaneP1);
-	springLayout.putConstraint(SpringLayout.WEST, editorPaneP2, 0, SpringLayout.WEST, editorPaneP1);
-	springLayout.putConstraint(SpringLayout.SOUTH, editorPaneP2, 65, SpringLayout.SOUTH, editorPaneP1);
-	springLayout.putConstraint(SpringLayout.EAST, editorPaneP2, 0, SpringLayout.EAST, editorPaneP1);
-	add(editorPaneP2);
+	JEditorPane editorPane_1 = new JEditorPane();
+	springLayout.putConstraint(SpringLayout.NORTH, editorPane_1, 171, SpringLayout.NORTH, this);
+	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -27, SpringLayout.NORTH, editorPane_1);
+	springLayout.putConstraint(SpringLayout.SOUTH, editorPane_1, -69, SpringLayout.SOUTH, this);
+	springLayout.putConstraint(SpringLayout.EAST, editorPane, 0, SpringLayout.EAST, editorPane_1);
+	springLayout.putConstraint(SpringLayout.EAST, editorPane_1, -585, SpringLayout.EAST, this);
+	add(editorPane_1);
 	
-	JLabel lblP1 = new JLabel("P1");
-	springLayout.putConstraint(SpringLayout.NORTH, lblP1, 40, SpringLayout.NORTH, this);
-	springLayout.putConstraint(SpringLayout.EAST, lblP1, -6, SpringLayout.WEST, editorPaneP1);
-	add(lblP1);
+	JLabel lblNewLabel = new JLabel("P1");
+	add(lblNewLabel);
 	
-	JLabel lblP2 = new JLabel("P2");
-	springLayout.putConstraint(SpringLayout.NORTH, lblP2, 49, SpringLayout.SOUTH, lblP1);
-	springLayout.putConstraint(SpringLayout.EAST, lblP2, -6, SpringLayout.WEST, editorPaneP2);
-	add(lblP2);
+	JLabel lblP = new JLabel("P2");
+	springLayout.putConstraint(SpringLayout.WEST, lblNewLabel, 0, SpringLayout.WEST, lblP);
+	springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel, -53, SpringLayout.NORTH, lblP);
+	springLayout.putConstraint(SpringLayout.EAST, lblP, -902, SpringLayout.EAST, this);
+	springLayout.putConstraint(SpringLayout.WEST, editorPane_1, 36, SpringLayout.EAST, lblP);
+	springLayout.putConstraint(SpringLayout.SOUTH, lblP, -81, SpringLayout.SOUTH, this);
+	add(lblP);
+	
+	JLabel lblPolynomialsChoice = new JLabel("POLYNOMIALS CHOICE");
+	springLayout.putConstraint(SpringLayout.WEST, lblPolynomialsChoice, 606, SpringLayout.WEST, this);
+	springLayout.putConstraint(SpringLayout.SOUTH, lblPolynomialsChoice, -39, SpringLayout.NORTH, editorPane);
+	lblPolynomialsChoice.setFont(new Font("Lucida Grande", Font.BOLD, 17));
+	add(lblPolynomialsChoice);
 	}
 }

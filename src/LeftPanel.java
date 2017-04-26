@@ -70,7 +70,7 @@ public class LeftPanel extends JPanel {
 		setLayout(springLayout);
 
 		
-		setPreferredSize(new Dimension(400, 533));
+		setPreferredSize(new Dimension(400, 588));
 		setVisible(true);
 
 		setBackground(SystemColor.window);
@@ -98,19 +98,19 @@ public class LeftPanel extends JPanel {
 		add(lblSpecifyP);
 		
 		JLabel lblInputParameters = new JLabel("INPUT PARAMETERS");
-		lblInputParameters.setForeground(Color.BLACK);
-		springLayout.putConstraint(SpringLayout.NORTH, lblInputParameters, 10, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.NORTH, lblInputParameters, 14, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.WEST, lblInputParameters, 0, SpringLayout.WEST, lblNewLabel);
+		lblInputParameters.setForeground(Color.BLACK);
 		lblInputParameters.setFont(new Font("Lucida Grande", Font.BOLD, 17));
 		add(lblInputParameters);
 		
 		JLabel lblOperations = new JLabel("OPERATIONS");
-		springLayout.putConstraint(SpringLayout.WEST, lblOperations, 0, SpringLayout.WEST, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.WEST, lblOperations, 30, SpringLayout.WEST, this);
 		lblOperations.setFont(new Font("Lucida Grande", Font.BOLD, 17));
 		add(lblOperations);
 		
 		JLabel lblNewLabel_1 = new JLabel("A and B are two integers, P is a prime number");
-		springLayout.putConstraint(SpringLayout.WEST, lblNewLabel_1, 30, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.WEST, lblNewLabel_1, 0, SpringLayout.WEST, lblNewLabel);
 		lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblNewLabel_1);
 		
@@ -136,46 +136,100 @@ public class LeftPanel extends JPanel {
 		spinner_2 = new JSpinner(primes);
 		springLayout.putConstraint(SpringLayout.WEST, spinner_2, 71, SpringLayout.EAST, lblSpecifyP);
 		springLayout.putConstraint(SpringLayout.EAST, spinner_2, -163, SpringLayout.EAST, this);
-		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel_1, 32, SpringLayout.SOUTH, spinner_2);
 		springLayout.putConstraint(SpringLayout.NORTH, spinner_2, 13, SpringLayout.SOUTH, spinner_1);
 		add(spinner_2);
 		
 		btnAdd = new JButton("Add");
-		springLayout.putConstraint(SpringLayout.EAST, lblOperations, 0, SpringLayout.EAST, btnAdd);
 		springLayout.putConstraint(SpringLayout.WEST, btnAdd, 0, SpringLayout.WEST, lblNewLabel);
-		springLayout.putConstraint(SpringLayout.EAST, btnAdd, -256, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnAdd, 0, SpringLayout.EAST, lblOperations);
 		add(btnAdd);
 		
-		JLabel lblSelectAPoints = new JLabel("Select a point/s then choose whether to add them or multiply one by a scalar ");
-		springLayout.putConstraint(SpringLayout.SOUTH, lblOperations, -39, SpringLayout.NORTH, lblSelectAPoints);
-		springLayout.putConstraint(SpringLayout.NORTH, lblSelectAPoints, 331, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.EAST, lblSelectAPoints, -10, SpringLayout.EAST, this);
+		JLabel lblSelectAPoints = new JLabel("\"C\" clears the selected points");
+		springLayout.putConstraint(SpringLayout.WEST, lblSelectAPoints, 0, SpringLayout.WEST, lblNewLabel);
 		lblSelectAPoints.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblSelectAPoints);
 		
 		btnMultiplyBy = new JButton("Multiply by");
-		springLayout.putConstraint(SpringLayout.WEST, btnMultiplyBy, 30, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.NORTH, btnMultiplyBy, 372, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnAdd, -6, SpringLayout.NORTH, btnMultiplyBy);
-		springLayout.putConstraint(SpringLayout.NORTH, btnMultiplyBy, 452, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, btnMultiplyBy, 30, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnMultiplyBy, 0, SpringLayout.EAST, lblOperations);
 		add(btnMultiplyBy);
 		
-		 tglbtnSelect = new JButton("Select");
-		
-		springLayout.putConstraint(SpringLayout.NORTH, tglbtnSelect, 358, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, lblSelectAPoints, -6, SpringLayout.NORTH, tglbtnSelect);
-		springLayout.putConstraint(SpringLayout.WEST, tglbtnSelect, 0, SpringLayout.WEST, lblNewLabel);
-		springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, 0, SpringLayout.EAST, lblOperations);
+		 tglbtnSelect = new JButton("C");
+		 springLayout.putConstraint(SpringLayout.EAST, lblOperations, -13, SpringLayout.WEST, tglbtnSelect);
+		 springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, -46, SpringLayout.EAST, lblNewLabel_1);
+		 springLayout.putConstraint(SpringLayout.WEST, tglbtnSelect, 0, SpringLayout.WEST, spinner);
+		 tglbtnSelect.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 	}
+		 });
 		add(tglbtnSelect);
 		
 		
 		SpinnerModel nums = new SpinnerNumberModel(1,1,1000,1);
 		 spinner_3 = new JSpinner(nums);
-		springLayout.putConstraint(SpringLayout.EAST, btnMultiplyBy, -13, SpringLayout.WEST, spinner_3);
-		springLayout.putConstraint(SpringLayout.NORTH, spinner_3, 100, SpringLayout.SOUTH, lblSelectAPoints);
-		springLayout.putConstraint(SpringLayout.WEST, spinner_3, 157, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, spinner_3, 126, SpringLayout.SOUTH, lblSelectAPoints);
-		springLayout.putConstraint(SpringLayout.EAST, spinner_3, -163, SpringLayout.EAST, this);
+		 springLayout.putConstraint(SpringLayout.NORTH, spinner_3, 0, SpringLayout.NORTH, btnMultiplyBy);
+		 springLayout.putConstraint(SpringLayout.WEST, spinner_3, 0, SpringLayout.WEST, spinner);
+		 springLayout.putConstraint(SpringLayout.EAST, spinner_3, 0, SpringLayout.EAST, lblNewLabel_1);
 		add(spinner_3);
+		
+		JLabel lblrandomGeneratesA = new JLabel("\"R\" generates A, B and P randomly");
+		springLayout.putConstraint(SpringLayout.SOUTH, tglbtnSelect, 69, SpringLayout.SOUTH, lblrandomGeneratesA);
+		springLayout.putConstraint(SpringLayout.NORTH, lblOperations, 39, SpringLayout.SOUTH, lblrandomGeneratesA);
+		springLayout.putConstraint(SpringLayout.NORTH, tglbtnSelect, 35, SpringLayout.SOUTH, lblrandomGeneratesA);
+		springLayout.putConstraint(SpringLayout.NORTH, lblrandomGeneratesA, 221, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel_1, -6, SpringLayout.NORTH, lblrandomGeneratesA);
+		springLayout.putConstraint(SpringLayout.WEST, lblrandomGeneratesA, 0, SpringLayout.WEST, lblNewLabel);
+		lblrandomGeneratesA.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		add(lblrandomGeneratesA);
+		
+		JButton btnR = new JButton("R");
+		springLayout.putConstraint(SpringLayout.NORTH, btnR, 10, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, btnR, 7, SpringLayout.EAST, lblInputParameters);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnR, 44, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnR, -152, SpringLayout.EAST, this);
+		add(btnR);
+		
+		JLabel lbladdLetsYou = new JLabel("\"Add\" lets you select two points to be added");
+		springLayout.putConstraint(SpringLayout.NORTH, lbladdLetsYou, 47, SpringLayout.SOUTH, btnMultiplyBy);
+		springLayout.putConstraint(SpringLayout.WEST, lbladdLetsYou, 0, SpringLayout.WEST, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.SOUTH, lbladdLetsYou, 58, SpringLayout.SOUTH, btnMultiplyBy);
+		lbladdLetsYou.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		add(lbladdLetsYou);
+		
+		JLabel lblmultiplyLetsYou = new JLabel("\"Multiply by\" lets you select one point to be multiplied by the scalar");
+		springLayout.putConstraint(SpringLayout.NORTH, lblSelectAPoints, 2, SpringLayout.SOUTH, lblmultiplyLetsYou);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblSelectAPoints, 18, SpringLayout.SOUTH, lblmultiplyLetsYou);
+		springLayout.putConstraint(SpringLayout.NORTH, lblmultiplyLetsYou, 4, SpringLayout.SOUTH, lbladdLetsYou);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblmultiplyLetsYou, 15, SpringLayout.SOUTH, lbladdLetsYou);
+		springLayout.putConstraint(SpringLayout.WEST, lblmultiplyLetsYou, 0, SpringLayout.WEST, lblNewLabel);
+		lblmultiplyLetsYou.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		add(lblmultiplyLetsYou);
+		
+		JLabel label = new JLabel("");
+		springLayout.putConstraint(SpringLayout.NORTH, label, 13, SpringLayout.SOUTH, lblSelectAPoints);
+		springLayout.putConstraint(SpringLayout.WEST, label, 45, SpringLayout.WEST, this);
+		label.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c3.png")));
+		add(label);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c4.png")));
+		springLayout.putConstraint(SpringLayout.NORTH, label_1, 0, SpringLayout.NORTH, separator);
+		springLayout.putConstraint(SpringLayout.WEST, label_1, 0, SpringLayout.WEST, separator);
+		add(label_1);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c5.png")));
+		springLayout.putConstraint(SpringLayout.SOUTH, label_2, -80, SpringLayout.NORTH, lblmultiplyLetsYou);
+		springLayout.putConstraint(SpringLayout.EAST, label_2, -43, SpringLayout.EAST, this);
+		add(label_2);
+		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c5.png")));
+		springLayout.putConstraint(SpringLayout.SOUTH, label_3, 0, SpringLayout.SOUTH, label);
+		springLayout.putConstraint(SpringLayout.EAST, label_3, 0, SpringLayout.EAST, tglbtnSelect);
+		add(label_3);
 
 
 		

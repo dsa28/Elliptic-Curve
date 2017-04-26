@@ -3,6 +3,10 @@ import java.awt.SystemColor;
 
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextPane;
+import javax.swing.JEditorPane;
 
 public class LowerPanel2 extends JPanel{
 	
@@ -10,9 +14,21 @@ public class LowerPanel2 extends JPanel{
 	SpringLayout springLayout = new SpringLayout();
 	setLayout(springLayout);
 	
-	setPreferredSize(new Dimension(700, 286));
+	setPreferredSize(new Dimension(1435, 283));
 	setVisible(true);	
 	
-	setBackground(SystemColor.window);}
-
+	setBackground(SystemColor.window);
+	
+	JLabel lblResult = new JLabel("RESULT");
+	springLayout.putConstraint(SpringLayout.NORTH, lblResult, 75, SpringLayout.NORTH, this);
+	springLayout.putConstraint(SpringLayout.WEST, lblResult, 653, SpringLayout.WEST, this);
+	lblResult.setFont(new Font("Lucida Grande", Font.BOLD, 17));
+	add(lblResult);
+	
+	JEditorPane editorPane = new JEditorPane();
+	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 38, SpringLayout.SOUTH, lblResult);
+	springLayout.putConstraint(SpringLayout.WEST, editorPane, 399, SpringLayout.WEST, this);
+	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -87, SpringLayout.SOUTH, this);
+	springLayout.putConstraint(SpringLayout.EAST, editorPane, -438, SpringLayout.EAST, this);
+	add(editorPane);}
 }

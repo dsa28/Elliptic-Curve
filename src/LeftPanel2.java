@@ -17,7 +17,7 @@ public class LeftPanel2 extends JPanel {
 		setLayout(springLayout);
 
 		
-		setPreferredSize(new Dimension(400, 1273));
+		setPreferredSize(new Dimension(200, 200));
 		setVisible(true);
 
 		setBackground(SystemColor.window);
