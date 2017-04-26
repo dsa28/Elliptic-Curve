@@ -29,24 +29,16 @@ public LearnMore() {
 		SpringLayout springLayout = new SpringLayout();
 		setLayout(springLayout);
 
-		
 		setPreferredSize(new Dimension(1950, 1273));
 		setVisible(true);
 
 		setBackground(SystemColor.window);
 		
-		JLabel label = new JLabel("New label");
-		label.setIcon(new ImageIcon(PolynomialWelcome.class.getResource("/resources/Welcome_Elliptic.png")));
-		springLayout.putConstraint(SpringLayout.NORTH, label, 0, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.WEST, label, 0, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, label, 0, SpringLayout.SOUTH, this);
-		springLayout.putConstraint(SpringLayout.EAST, label, 0, SpringLayout.EAST, this);
-		add(label);
-		
-		JButton btnStartPoly = new JButton("Start");
-		springLayout.putConstraint(SpringLayout.NORTH, btnStartPoly, 1104, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.WEST, btnStartPoly, 184, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.EAST, btnStartPoly, -56, SpringLayout.EAST, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnStartPoly, 97, SpringLayout.SOUTH, this);
-		add(btnStartPoly);}
+		JLabel lblNewLabel = new JLabel("");
+		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel, 0, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, lblNewLabel, 0, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel, 1273, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.EAST, lblNewLabel, 1950, SpringLayout.WEST, this);
+		lblNewLabel.setIcon(new ImageIcon(LearnMore.class.getResource("/resources/Welcome_Elliptic.png")));
+		add(lblNewLabel);}
 }
