@@ -140,25 +140,25 @@ public class LeftPanel extends JPanel {
 		add(spinner_2);
 		
 		btnAdd = new JButton("Add");
-		springLayout.putConstraint(SpringLayout.WEST, btnAdd, 0, SpringLayout.WEST, lblNewLabel);
-		springLayout.putConstraint(SpringLayout.EAST, btnAdd, 0, SpringLayout.EAST, lblOperations);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblOperations, -36, SpringLayout.NORTH, btnAdd);
+		springLayout.putConstraint(SpringLayout.WEST, btnAdd, 30, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnAdd, -256, SpringLayout.EAST, this);
 		add(btnAdd);
 		
-		JLabel lblSelectAPoints = new JLabel("\"C\" clears the selected points");
+		JLabel lblSelectAPoints = new JLabel("\"C\" lets you select points");
 		springLayout.putConstraint(SpringLayout.WEST, lblSelectAPoints, 0, SpringLayout.WEST, lblNewLabel);
 		lblSelectAPoints.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblSelectAPoints);
 		
 		btnMultiplyBy = new JButton("Multiply by");
 		springLayout.putConstraint(SpringLayout.NORTH, btnMultiplyBy, 372, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnAdd, -6, SpringLayout.NORTH, btnMultiplyBy);
 		springLayout.putConstraint(SpringLayout.WEST, btnMultiplyBy, 30, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.EAST, btnMultiplyBy, 0, SpringLayout.EAST, lblOperations);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnAdd, -6, SpringLayout.NORTH, btnMultiplyBy);
 		add(btnMultiplyBy);
 		
 		 tglbtnSelect = new JButton("C");
 		 springLayout.putConstraint(SpringLayout.EAST, lblOperations, -13, SpringLayout.WEST, tglbtnSelect);
-		 springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, -46, SpringLayout.EAST, lblNewLabel_1);
+		 springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, -39, SpringLayout.EAST, lblNewLabel_1);
 		 springLayout.putConstraint(SpringLayout.WEST, tglbtnSelect, 0, SpringLayout.WEST, spinner);
 		 tglbtnSelect.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent e) {
@@ -169,14 +169,14 @@ public class LeftPanel extends JPanel {
 		
 		SpinnerModel nums = new SpinnerNumberModel(1,1,1000,1);
 		 spinner_3 = new JSpinner(nums);
+		 springLayout.putConstraint(SpringLayout.EAST, btnMultiplyBy, -13, SpringLayout.WEST, spinner_3);
 		 springLayout.putConstraint(SpringLayout.NORTH, spinner_3, 0, SpringLayout.NORTH, btnMultiplyBy);
 		 springLayout.putConstraint(SpringLayout.WEST, spinner_3, 0, SpringLayout.WEST, spinner);
 		 springLayout.putConstraint(SpringLayout.EAST, spinner_3, 0, SpringLayout.EAST, lblNewLabel_1);
 		add(spinner_3);
 		
 		JLabel lblrandomGeneratesA = new JLabel("\"R\" generates A, B and P randomly");
-		springLayout.putConstraint(SpringLayout.SOUTH, tglbtnSelect, 69, SpringLayout.SOUTH, lblrandomGeneratesA);
-		springLayout.putConstraint(SpringLayout.NORTH, lblOperations, 39, SpringLayout.SOUTH, lblrandomGeneratesA);
+		springLayout.putConstraint(SpringLayout.SOUTH, tglbtnSelect, 76, SpringLayout.SOUTH, lblrandomGeneratesA);
 		springLayout.putConstraint(SpringLayout.NORTH, tglbtnSelect, 35, SpringLayout.SOUTH, lblrandomGeneratesA);
 		springLayout.putConstraint(SpringLayout.NORTH, lblrandomGeneratesA, 221, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel_1, -6, SpringLayout.NORTH, lblrandomGeneratesA);
@@ -185,10 +185,10 @@ public class LeftPanel extends JPanel {
 		add(lblrandomGeneratesA);
 		
 		JButton btnR = new JButton("R");
-		springLayout.putConstraint(SpringLayout.NORTH, btnR, 10, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.WEST, btnR, 7, SpringLayout.EAST, lblInputParameters);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnR, 44, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.EAST, btnR, -152, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.NORTH, btnR, 0, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.WEST, btnR, 6, SpringLayout.EAST, lblInputParameters);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnR, 41, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.EAST, btnR, -146, SpringLayout.EAST, this);
 		add(btnR);
 		
 		JLabel lbladdLetsYou = new JLabel("\"Add\" lets you select two points to be added");
@@ -207,29 +207,6 @@ public class LeftPanel extends JPanel {
 		lblmultiplyLetsYou.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblmultiplyLetsYou);
 		
-		JLabel label = new JLabel("");
-		springLayout.putConstraint(SpringLayout.NORTH, label, 13, SpringLayout.SOUTH, lblSelectAPoints);
-		springLayout.putConstraint(SpringLayout.WEST, label, 45, SpringLayout.WEST, this);
-		label.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c3.png")));
-		add(label);
-		
-		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c4.png")));
-		springLayout.putConstraint(SpringLayout.NORTH, label_1, 0, SpringLayout.NORTH, separator);
-		springLayout.putConstraint(SpringLayout.WEST, label_1, 0, SpringLayout.WEST, separator);
-		add(label_1);
-		
-		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c5.png")));
-		springLayout.putConstraint(SpringLayout.SOUTH, label_2, -80, SpringLayout.NORTH, lblmultiplyLetsYou);
-		springLayout.putConstraint(SpringLayout.EAST, label_2, -43, SpringLayout.EAST, this);
-		add(label_2);
-		
-		JLabel label_3 = new JLabel("");
-		label_3.setIcon(new ImageIcon(LeftPanel.class.getResource("/resources/c5.png")));
-		springLayout.putConstraint(SpringLayout.SOUTH, label_3, 0, SpringLayout.SOUTH, label);
-		springLayout.putConstraint(SpringLayout.EAST, label_3, 0, SpringLayout.EAST, tglbtnSelect);
-		add(label_3);
 
 
 		

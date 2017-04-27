@@ -19,7 +19,7 @@ public class CenterPanel2 extends JPanel {
 		setLayout(springLayout);
 
 		
-		setPreferredSize(new Dimension(1000, 302));
+		setPreferredSize(new Dimension(1100, 400));
 		setVisible(true);
 
 		setBackground(SystemColor.window);

@@ -108,41 +108,7 @@ public class RightPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.EAST, btnMiddle, 0, SpringLayout.EAST, btnUp);
 		add(btnMiddle);
 		
-		lblNewLabel = new JLabel("");
-		springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel, -54, SpringLayout.SOUTH, this);
-		springLayout.putConstraint(SpringLayout.EAST, lblNewLabel, -197, SpringLayout.EAST, this);
-		lblNewLabel.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/c5.png")));
-		add(lblNewLabel);
-		
-		label_2 = new JLabel("");
-		springLayout.putConstraint(SpringLayout.SOUTH, label_2, -10, SpringLayout.SOUTH, this);
-		springLayout.putConstraint(SpringLayout.EAST, label_2, -28, SpringLayout.EAST, this);
-		label_2.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/c5.png")));
-		add(label_2);
-		
-		label_3 = new JLabel("");
-		springLayout.putConstraint(SpringLayout.EAST, label_3, -43, SpringLayout.EAST, this);
-		label_3.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/c5.png")));
-		add(label_3);
-		
-		label_4 = new JLabel("");
-		label_4.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/c5.png")));
-		add(label_4);
-		
-		label_6 = new JLabel("");
-		springLayout.putConstraint(SpringLayout.NORTH, label_4, 0, SpringLayout.NORTH, label_6);
-		springLayout.putConstraint(SpringLayout.EAST, label_4, -50, SpringLayout.WEST, label_6);
-		springLayout.putConstraint(SpringLayout.NORTH, label_6, 10, SpringLayout.NORTH, this);
-		label_6.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/c4.png")));
-		add(label_6);
-		
-		label_7 = new JLabel("");
-		springLayout.putConstraint(SpringLayout.EAST, label_6, -48, SpringLayout.WEST, label_7);
-		springLayout.putConstraint(SpringLayout.NORTH, label_7, 10, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.NORTH, label_3, 88, SpringLayout.SOUTH, label_7);
-		springLayout.putConstraint(SpringLayout.EAST, label_7, -10, SpringLayout.EAST, this);
-		label_7.setIcon(new ImageIcon(RightPanel.class.getResource("/resources/c3.png")));
-		add(label_7);
+
 
 
 		

@@ -14,7 +14,7 @@ public class LowerPanel2 extends JPanel{
 	SpringLayout springLayout = new SpringLayout();
 	setLayout(springLayout);
 	
-	setPreferredSize(new Dimension(1435, 283));
+	setPreferredSize(new Dimension(1435, 200));
 	setVisible(true);	
 	
 	setBackground(SystemColor.window);
@@ -26,9 +26,9 @@ public class LowerPanel2 extends JPanel{
 	add(lblResult);
 	
 	JEditorPane editorPane = new JEditorPane();
-	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 38, SpringLayout.SOUTH, lblResult);
-	springLayout.putConstraint(SpringLayout.WEST, editorPane, 399, SpringLayout.WEST, this);
-	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -87, SpringLayout.SOUTH, this);
-	springLayout.putConstraint(SpringLayout.EAST, editorPane, -438, SpringLayout.EAST, this);
+	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 17, SpringLayout.SOUTH, lblResult);
+	springLayout.putConstraint(SpringLayout.WEST, editorPane, 511, SpringLayout.WEST, this);
+	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -41, SpringLayout.SOUTH, this);
+	springLayout.putConstraint(SpringLayout.EAST, editorPane, 874, SpringLayout.WEST, this);
 	add(editorPane);}
 }
