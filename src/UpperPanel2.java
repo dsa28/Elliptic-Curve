@@ -14,6 +14,9 @@ import java.awt.Font;
 
 public class UpperPanel2 extends JPanel{
 	
+	public JEditorPane editorPane;
+	public JEditorPane editorPane_1;
+	
 	public UpperPanel2() {
 	SpringLayout springLayout = new SpringLayout();
 	setLayout(springLayout);
@@ -23,12 +26,12 @@ public class UpperPanel2 extends JPanel{
 	
 	setBackground(SystemColor.window);
 	
-	JEditorPane editorPane = new JEditorPane();
+	 editorPane = new JEditorPane();
 
 	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 101, SpringLayout.NORTH, this);
 	add(editorPane);
 	
-	JEditorPane editorPane_1 = new JEditorPane();
+	 editorPane_1 = new JEditorPane();
 	springLayout.putConstraint(SpringLayout.WEST, editorPane, 0, SpringLayout.WEST, editorPane_1);
 	springLayout.putConstraint(SpringLayout.NORTH, editorPane_1, 171, SpringLayout.NORTH, this);
 	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -27, SpringLayout.NORTH, editorPane_1);

@@ -10,6 +10,8 @@ import javax.swing.JEditorPane;
 
 public class LowerPanel2 extends JPanel{
 	
+	public JEditorPane editorPane;
+	
 	public LowerPanel2() {
 	SpringLayout springLayout = new SpringLayout();
 	setLayout(springLayout);
@@ -25,7 +27,7 @@ public class LowerPanel2 extends JPanel{
 	lblResult.setFont(new Font("Lucida Grande", Font.BOLD, 17));
 	add(lblResult);
 	
-	JEditorPane editorPane = new JEditorPane();
+    editorPane = new JEditorPane();
 	editorPane.setEditable(false);
 	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 17, SpringLayout.SOUTH, lblResult);
 	springLayout.putConstraint(SpringLayout.WEST, editorPane, 511, SpringLayout.WEST, this);

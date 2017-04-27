@@ -40,6 +40,152 @@ public class PolynomialArithmetic extends JPanel {
 		this.setLayout(new BorderLayout(0, 0));
 	
 		
+		center.btnAdd.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p1.add(p2).toString());
+		
+			}
+			
+		});
+		
+		center.btnSubtract.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p1.subtract(p2).toString());
+				
+			}
+			
+		});
+		
+		center.btnSubtractt.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p2.subtract(p1).toString());
+				
+			}
+			
+		});
+		
+		center.btnMultiply.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p1.multiply(p2).toString());
+				
+			}
+			
+		});
+		
+		center.btnDivide.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p1.divide(p2).toString());
+				
+			}
+			
+		});
+		
+		center.btnDividee.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p2.divide(p1).toString());
+				
+			}
+			
+		});
+		
+		center.btnReduceP1.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				
+				lower.editorPane.setText(p1.toString());
+				
+			}
+			
+		});
+		center.btnInverseOfP1.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane.getText());
+				
+				lower.editorPane.setText(p1.inverse().toString());
+				
+			}
+			
+		});
+		
+		center.btnReduceP2.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p2= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p2.toString());
+				
+			}
+			
+		});
+		
+		center.btnInverseOfP2.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Polynomial p1= new Polynomial(upper.editorPane_1.getText());
+				
+				lower.editorPane.setText(p1.inverse().toString());
+				
+			}
+			
+		});
+		
+		
 		this.add(upper,BorderLayout.NORTH);
 		this.add(left, BorderLayout.WEST);
 		this.add(right, BorderLayout.EAST);

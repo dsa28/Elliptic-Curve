@@ -20,6 +20,7 @@ import java.awt.SystemColor;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import javax.swing.JToggleButton;
 
@@ -42,6 +43,8 @@ public class TestWindow {
 	
 	private JMenuBar menuBar;
 	private JMenu Menu;
+	
+	private Random rand;
 	
 	CardLayout c = new CardLayout();
 
@@ -74,6 +77,7 @@ public class TestWindow {
 	 */
 	private void initialize() {
 		
+		rand = new Random();
 		
 		
 		frame = new JFrame();
@@ -199,6 +203,34 @@ public class TestWindow {
 			plane.setCurve(c1);
 				
 			}});
+		
+		left.btnR.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				int a,b,p;
+				a= rand.nextInt(1000);
+				b = rand.nextInt(1000);
+				
+				p = rand.nextInt(left.p.size());
+				
+				
+				
+				left.spinner.setValue(a);
+				left.spinner_1.setValue(b);
+				left.spinner_2.setValue(left.p.get(p));
+				
+				c1.setA(a);
+				c1.setB(b);
+				c1.setP(p);
+				
+				plane.setCurve(c1);
+				
+				
+			}
+			
+		});
 		
 	
 	

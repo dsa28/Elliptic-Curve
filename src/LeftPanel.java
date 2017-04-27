@@ -33,6 +33,7 @@ public class LeftPanel extends JPanel {
 	public JButton btnAdd;
 	public JButton btnMultiplyBy;
 	public JButton tglbtnSelect;
+	public JButton btnR;
 	
 	public ArrayList<String> p = new ArrayList<String>();
 	
@@ -184,7 +185,7 @@ public class LeftPanel extends JPanel {
 		lblrandomGeneratesA.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		add(lblrandomGeneratesA);
 		
-		JButton btnR = new JButton("R");
+		 btnR = new JButton("R");
 		springLayout.putConstraint(SpringLayout.NORTH, btnR, 0, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.WEST, btnR, 6, SpringLayout.EAST, lblInputParameters);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnR, 41, SpringLayout.NORTH, this);

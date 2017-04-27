@@ -113,7 +113,7 @@ public class Polynomial {
 	{
 		//To multiply two numbers in GF fields, we can multiply and reduce bit by bit
 		//In order to do so, we need to find the remainder of x^n modulo the primary polynomial
-		
+
 		BitString remainder = primary.remainder(); //Remainder of x^n 
 		BitString temp = poly.getCoeffs();
 		
@@ -127,7 +127,7 @@ public class Polynomial {
 		for (int i=degree-1; i>=0; i--)
 		{
 			temp.fill(degree);
-			
+			coeffs.fill(degree);
 			//Check whether this temp should be included in the result (using xor) or not
 			//(Depends on whether the bit is 1 or 0)
 			if (coeffs.getBit(i) == 1)
@@ -235,6 +235,8 @@ public class Polynomial {
 		//Get rid of leading 0s
 		dividend.trim();
 		divisor.trim();
+		
+	
 	
 		BitString temp;
 		BitString x;
@@ -270,19 +272,159 @@ public class Polynomial {
 	
 	
 	
-	Polynomial(){}
 	
 	Polynomial(BitString bits)
 	{
 		coeffs = new BitString(bits);
 	}
 	
-	Polynomial (String bits)
-	{
-		coeffs = new BitString(bits);
+
+	
+	String hexToBin(char c) {
+		switch(c) {
+			case '0': return "0000";
+			case '1': return "0001";
+			case '2': return "0010";
+			case '3': return "0011";
+			case '4': return "0100";
+			case '5': return "0101";
+			case '6': return "0110";
+			case '7': return "0111";
+			case '8': return "1000";
+			case '9': return "1001";
+			case 'A': return "1010";
+			case 'B': return "1011";
+			case 'C': return "1100";
+			case 'D': return "1101";
+			case 'E': return "1110";
+			case 'F': return "1111";
+			case 'a': return "1010";
+			case 'b': return "1011";
+			case 'c': return "1100";
+			case 'd': return "1101";
+			case 'e': return "1110";
+			case 'f': return "1111";
+			default: return "";
+		}
 	}
 	
+	boolean isWhitespace(char c) {
+		return     c == ' '
+				|| c == '\t'
+				|| c == '\r'
+				|| c == '\n';
+	}
 	
+	boolean isAcceptableDigit(char c) {
+		return c >= '0' && c <= '8';
+	}
+	
+	Polynomial(){}
+	
+	
+	
+	Polynomial (String poly)
+	{
+		poly = poly.trim();
+		boolean isBinary = true;
+		for(int i = 0; i < poly.length(); ++i) {
+			if(poly.charAt(i) != '0' && poly.charAt(i) != '1') {
+				isBinary = false;
+				break;
+			}
+		}
+		
+		if(isBinary) {
+			System.out.println(poly);
+			coeffs = new BitString(poly);
+			
+			reduce();
+			return;
+		}
+		
+		boolean isHex = true;
+		if(poly.length() < 3) {
+			isHex = false;	
+		}
+		
+		else if(poly.charAt(0) != '0') {
+			isHex = false;
+		}
+		
+		else if(poly.charAt(1) != 'x') {
+			isHex = false;
+		}
+		
+		if(isHex) {
+			String binForm = "";
+			//Change hex value to binary and ignore non-hex digits
+			for(int i = 2; i < poly.length(); ++i) {
+				binForm = binForm + hexToBin(poly.charAt(i));
+			}
+			
+			System.out.println(binForm);
+			coeffs = new BitString(binForm);
+			
+			reduce();
+			
+			return;
+		}
+		
+		int xiCoeff[] = new int[9];
+		for(int i = 0; i < 9; ++i) {
+			xiCoeff[i] = 0;
+		}
+		
+		//states are:
+		//0: expecting x
+		//1: expecting ^
+		//2: expecting value of power
+		//3: expecting +
+		int curState = 0;
+		for(int i = 0; i < poly.length(); ++i) {
+			if(isWhitespace(poly.charAt(i))) {
+				continue;
+			}
+			
+			if(curState == 0 && poly.charAt(i) == '1') {
+				xiCoeff[0] = (xiCoeff[0] + 1) % 2;
+				curState = 3;
+			}
+			
+			if(curState == 0 && poly.charAt(i) == 'x') {
+				curState = 1;
+			}
+			
+			else if(curState == 1 && poly.charAt(i) == '^') {
+				curState = 2;
+			}
+			
+			else if(curState == 2 && isAcceptableDigit(poly.charAt(i))) {
+				xiCoeff[(int)poly.charAt(i) - (int)'0'] = (xiCoeff[(int)poly.charAt(i) - (int)'0'] + 1) % 2;
+				curState = 3;
+			}
+			
+			else if (curState == 3 && poly.charAt(i) == '+') {
+				curState = 0;
+			}
+		}
+		
+		String binForm = "";
+		for(int i = 8; i >= 0; --i) {
+			char c = (char) ((int)'0' + xiCoeff[i]);
+			binForm = binForm + c;
+		}
+		
+		System.out.println(binForm);
+		coeffs = new BitString(binForm);
+		
+		reduce();
+	
+	}
+	
+;
+	
+
 	private
 	BitString coeffs; 
 	int degree = 8;
