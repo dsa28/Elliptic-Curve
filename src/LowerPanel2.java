@@ -26,6 +26,7 @@ public class LowerPanel2 extends JPanel{
 	add(lblResult);
 	
 	JEditorPane editorPane = new JEditorPane();
+	editorPane.setEditable(false);
 	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 17, SpringLayout.SOUTH, lblResult);
 	springLayout.putConstraint(SpringLayout.WEST, editorPane, 511, SpringLayout.WEST, this);
 	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -41, SpringLayout.SOUTH, this);

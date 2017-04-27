@@ -141,6 +141,7 @@ public class LeftPanel extends JPanel {
 		
 		btnAdd = new JButton("Add");
 		springLayout.putConstraint(SpringLayout.SOUTH, lblOperations, -36, SpringLayout.NORTH, btnAdd);
+		springLayout.putConstraint(SpringLayout.EAST, lblOperations, 0, SpringLayout.EAST, btnAdd);
 		springLayout.putConstraint(SpringLayout.WEST, btnAdd, 30, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.EAST, btnAdd, -256, SpringLayout.EAST, this);
 		add(btnAdd);
@@ -157,9 +158,8 @@ public class LeftPanel extends JPanel {
 		add(btnMultiplyBy);
 		
 		 tglbtnSelect = new JButton("C");
-		 springLayout.putConstraint(SpringLayout.EAST, lblOperations, -13, SpringLayout.WEST, tglbtnSelect);
-		 springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, -39, SpringLayout.EAST, lblNewLabel_1);
-		 springLayout.putConstraint(SpringLayout.WEST, tglbtnSelect, 0, SpringLayout.WEST, spinner);
+		 springLayout.putConstraint(SpringLayout.WEST, tglbtnSelect, 6, SpringLayout.EAST, lblOperations);
+		 springLayout.putConstraint(SpringLayout.EAST, tglbtnSelect, -27, SpringLayout.EAST, lblNewLabel_1);
 		 tglbtnSelect.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent e) {
 		 	}
