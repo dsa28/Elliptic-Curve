@@ -56,6 +56,14 @@ public class Polynomial {
 		
 		Polynomial temp,coef,temp2;
 		
+
+		coeffs.trim();
+		
+		if (coeffs.getBits().toString().equals("0"))
+		{
+			return new Polynomial("0");
+		}
+		
 		a1 = new Polynomial("00000000");
 		b1 = new Polynomial("00000001");
 		

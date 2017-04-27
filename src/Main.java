@@ -40,9 +40,9 @@ public class Main {
 		
 		System.out.println(s.add(d));
 		
-		Polynomial z= new Polynomial("01110110");
-		//z = z.inverse();
+		Polynomial z= new Polynomial("0");
+		z = z.inverse();
 		
-		//System.out.println(z);
+		System.out.println(z);
 	}
 }
