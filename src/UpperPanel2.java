@@ -27,34 +27,45 @@ public class UpperPanel2 extends JPanel{
 	setBackground(SystemColor.window);
 	
 	 editorPane = new JEditorPane();
-
-	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 101, SpringLayout.NORTH, this);
+	 springLayout.putConstraint(SpringLayout.WEST, editorPane, 569, SpringLayout.WEST, this);
+	 springLayout.putConstraint(SpringLayout.EAST, editorPane, -585, SpringLayout.EAST, this);
 	add(editorPane);
 	
 	 editorPane_1 = new JEditorPane();
-	springLayout.putConstraint(SpringLayout.WEST, editorPane, 0, SpringLayout.WEST, editorPane_1);
-	springLayout.putConstraint(SpringLayout.NORTH, editorPane_1, 171, SpringLayout.NORTH, this);
-	springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -27, SpringLayout.NORTH, editorPane_1);
-	springLayout.putConstraint(SpringLayout.SOUTH, editorPane_1, -69, SpringLayout.SOUTH, this);
-	springLayout.putConstraint(SpringLayout.EAST, editorPane, 0, SpringLayout.EAST, editorPane_1);
-	springLayout.putConstraint(SpringLayout.EAST, editorPane_1, -585, SpringLayout.EAST, this);
+	 springLayout.putConstraint(SpringLayout.NORTH, editorPane_1, 171, SpringLayout.NORTH, this);
+	 springLayout.putConstraint(SpringLayout.WEST, editorPane_1, 569, SpringLayout.WEST, this);
+	 springLayout.putConstraint(SpringLayout.SOUTH, editorPane_1, -78, SpringLayout.SOUTH, this);
+	 springLayout.putConstraint(SpringLayout.EAST, editorPane_1, -585, SpringLayout.EAST, this);
+	 springLayout.putConstraint(SpringLayout.SOUTH, editorPane, -36, SpringLayout.NORTH, editorPane_1);
 	add(editorPane_1);
 	
 	JLabel lblNewLabel = new JLabel("P1");
+	springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel, 0, SpringLayout.NORTH, editorPane);
+	springLayout.putConstraint(SpringLayout.EAST, lblNewLabel, -30, SpringLayout.WEST, editorPane);
 	add(lblNewLabel);
 	
 	JLabel lblP = new JLabel("P2");
-	springLayout.putConstraint(SpringLayout.WEST, lblNewLabel, 0, SpringLayout.WEST, lblP);
-	springLayout.putConstraint(SpringLayout.SOUTH, lblNewLabel, -53, SpringLayout.NORTH, lblP);
-	springLayout.putConstraint(SpringLayout.EAST, lblP, -902, SpringLayout.EAST, this);
-	springLayout.putConstraint(SpringLayout.WEST, editorPane_1, 36, SpringLayout.EAST, lblP);
-	springLayout.putConstraint(SpringLayout.SOUTH, lblP, -81, SpringLayout.SOUTH, this);
+	springLayout.putConstraint(SpringLayout.NORTH, lblP, 0, SpringLayout.NORTH, editorPane_1);
+	springLayout.putConstraint(SpringLayout.WEST, lblP, 0, SpringLayout.WEST, lblNewLabel);
 	add(lblP);
 	
 	JLabel lblPolynomialsChoice = new JLabel("POLYNOMIALS CHOICE");
+	springLayout.putConstraint(SpringLayout.NORTH, editorPane, 39, SpringLayout.SOUTH, lblPolynomialsChoice);
+	springLayout.putConstraint(SpringLayout.SOUTH, lblPolynomialsChoice, -221, SpringLayout.SOUTH, this);
 	springLayout.putConstraint(SpringLayout.WEST, lblPolynomialsChoice, 606, SpringLayout.WEST, this);
-	springLayout.putConstraint(SpringLayout.SOUTH, lblPolynomialsChoice, -39, SpringLayout.NORTH, editorPane);
 	lblPolynomialsChoice.setFont(new Font("Lucida Grande", Font.BOLD, 17));
 	add(lblPolynomialsChoice);
+	
+	JLabel lblThePolynomialsP = new JLabel("The polynomials P1 and P2 can be written in polynomial form, hexadecimal notation or binary notation");
+	springLayout.putConstraint(SpringLayout.WEST, lblThePolynomialsP, 434, SpringLayout.WEST, this);
+	springLayout.putConstraint(SpringLayout.SOUTH, lblThePolynomialsP, -39, SpringLayout.SOUTH, this);
+	lblThePolynomialsP.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+	add(lblThePolynomialsP);
+	
+	JLabel lblHexadecimalNotationShould = new JLabel("Hexadecimal notation should be preceded by 0x");
+	springLayout.putConstraint(SpringLayout.NORTH, lblHexadecimalNotationShould, 6, SpringLayout.SOUTH, lblThePolynomialsP);
+	springLayout.putConstraint(SpringLayout.WEST, lblHexadecimalNotationShould, 594, SpringLayout.WEST, this);
+	lblHexadecimalNotationShould.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
+	add(lblHexadecimalNotationShould);
 	}
 }
