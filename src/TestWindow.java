@@ -223,7 +223,7 @@ public class TestWindow {
 				
 				c1.setA(a);
 				c1.setB(b);
-				c1.setP(p);
+				c1.setP(Integer.parseInt(left.p.get(p)));
 				
 				plane.setCurve(c1);
 				

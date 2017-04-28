@@ -55,8 +55,10 @@ public class EllipticCurve {
 		int temp;
 		int temp2;
 		
+		
 		while (b1 != 1) //always get 1; all numbers have inverse because p is prime
 		{
+			
 			r = a1/b1;
 			
 			temp = b1;
@@ -164,6 +166,7 @@ public class EllipticCurve {
 			}
 			
 			int temp = mod(x2-x1); 
+			System.out.println(temp);
 			m= mod((y2-y1)*inverse(temp)); //want inverse of a number modulo a prime
 		}
 		else
